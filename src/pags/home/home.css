@@ -1,0 +1,97 @@
+.geral{
+    display: flex;
+    flex-direction: column;
+}
+
+.corpo{
+    background-image: url(../../img/onibus.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+#menu-inicial{
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    width: 1fr;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 10px 5px 5px black;
+    margin: 15% 15% 0% 15%;
+    padding: 0% 3% 0 3%;   
+    justify-content: center;
+}
+
+#pesquisa{
+    display: flex;
+    background-color: #c6d4e1;
+    width: 96%;
+    height: 20%;
+    margin-top: 5%;
+    border-radius: 15px;
+    padding: 2%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cards{
+    display: flex;
+    padding-top: 3%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#paragrafo-1{
+    padding: 3% 18% 3%;
+    background-color: #fafafa;
+}
+
+#paragrafo-2{
+    display: flex;
+    padding: 3% 18% 6%;
+    background-color: #fff;
+}
+
+#paragrafo-2 p{ padding-right: 10%;}
+
+#footer{
+    background-image: url(../../img/estrada.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#footer-promocoes {
+    display: flex;
+    margin-top: 30%;
+    padding: 3% 18% 3%;
+    background-color: #fafafa;
+}
+#footer-promocoes p{padding-right: 10%;}
+
+#footer-links{
+    display: flex;
+    background-color: #c6d4e1;
+    justify-content: space-between;
+}
+
+#footer-links p {padding-right: 20%;}
+
+#footer-links ul {
+    text-decoration: underline;
+    width: 50%;
+}
+
+#footer-links li {list-style: none;}
+
+#footer-menu {
+    background-color: #c6d4e1;
+    padding: 3% 18% 3%;
+}
+
+#footer-menu hr{border-color: #2b5166;}

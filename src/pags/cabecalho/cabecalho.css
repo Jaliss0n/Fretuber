@@ -1,0 +1,46 @@
+#cabecalho {
+  display: flex;
+  background-color: #c6d4e1;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5% 20% 0.5% 20%;
+}
+
+#login{
+  display: flex;
+  width: 230px;
+  justify-content: space-between;
+}
+
+.btn-cabecalho {
+  background-color: #44749d;
+  color: white;
+  border-radius: 8px;
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  border-style: hidden;
+}
+
+.btn-cabecalho:hover {
+  background-color: #2b5166;
+}
+
+.btn-cabecalho-att{
+  background-color: White;
+  color: #44749d;
+  border-radius: 8px;
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  border-style: hidden;
+}
+
+.btn-cabecalho-att:hover{
+  background-color: #c5c5c5;
+}
+
+a{
+  text-decoration: none;
+  color:inherit
+}
