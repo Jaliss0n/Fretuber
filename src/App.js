@@ -1,5 +1,5 @@
 import Cabecalho from './pags/cabecalho/cabecalho';
-import Home from './pags/home/home';
+import Rodape from './pags/rodape/rodape';
 import Rotas from './routes';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <div>
       <Cabecalho/>
       <Rotas/>
+      <Rodape/>
       
     </div>
   );

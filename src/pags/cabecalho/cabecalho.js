@@ -15,16 +15,16 @@ function Cabecalho() {
   return (
     <div>
       <header id="cabecalho">
-        <img src={logo} width='120px' height='70px' />
+        <a href='/'><img src={logo} width='120px' height='70px' /></a>
         
         <ThemeProvider theme={theme}>
           <button className='btn-cabecalho'>Buscar</button>
           <button className='btn-cabecalho'>Promoções</button>
+          <button className='btn-cabecalho'><a href='/sobre'>Quem Somos</a></button>
 
-          <button className='btn-cabecalho'>Quem Somos</button>
           <aside id='login'>
             <button className='btn-cabecalho-att'><a href='/login'>Login</a></button>
-            <button className='btn-cabecalho-att'>Cadastre-se</button>
+            <button className='btn-cabecalho-att'><a href='/cadastro'>Cadastre-se</a></button>
           </aside>
         </ThemeProvider>
         

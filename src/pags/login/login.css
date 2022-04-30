@@ -1,0 +1,64 @@
+#login-geral{padding-bottom: 300px;}
+
+#login-geral video{
+    top: 0;
+    position: fixed;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+}
+
+#cx-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+    width: 1fr;
+    margin: 7% 37% 0%;
+    background-color: #fff;
+    border-radius: 18px;
+
+}
+
+#cx-login-top{
+    background-color: #c6d4e1;
+    border-radius: 18px 18px 0 0 ;
+}
+
+#cx-login-top h4{
+    text-align: center;
+    color: #44749d;
+    font-size: 1.5rem;
+}
+
+#cx-login-menu {
+    display: flex;
+    flex-direction: column;
+    margin: 4%;
+    justify-content: space-between;
+    flex-grow: 0.7;
+}
+
+#cx-login-menu h5 {
+    text-align: center;
+    color: #44749d;
+    font-size: 1rem;
+}
+
+#cx-login-menu a {
+    color: purple;
+    text-decoration: underline;
+}
+
+.btn-login {
+    background-color: #44749d;
+    color: white;
+    border-radius: 8px;
+    font-size: medium;
+    font-weight: bold;
+    padding: 15px 20px 15px 20px;
+    border-style: hidden;
+}
+.btn-login:hover{
+    background-color: #2b5166;
+}
