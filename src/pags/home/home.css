@@ -24,7 +24,7 @@
     justify-content: center;
 }
 
-#pesquisa{
+#pesquisa form{
     display: flex;
     background-color: #c6d4e1;
     width: 96%;

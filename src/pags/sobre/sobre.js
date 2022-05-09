@@ -23,10 +23,7 @@ function Sobre () {
     return(
         <div className="sobre-corpo">
 
-            <div>
-                <h1>BANNER</h1>
-            </div>
-
+            <div id='sobre-banner1'/>
 
             <div id='sobre-bloco1'>
                 <div id='sobre-texto'>
@@ -81,9 +78,7 @@ function Sobre () {
 
             </div>
 
-            <div>
-                <h1>BANNER</h1>
-            </div>
+            <div id='sobre-banner2'/>
 
             <div id='sobre-cards'>
 

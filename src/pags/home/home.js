@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import unip from '../../img/unip.jpg';
 import unisanta from '../../img/unisanta.jpg';
 import esamc from '../../img/esamc.jpeg';
@@ -12,18 +12,15 @@ import Stack from '@mui/material/Stack';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import IconButton from '@mui/material/IconButton';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useForm , Controller} from "react-hook-form";
+import Teste from '../teste/teste';
+
 
 
 
@@ -39,9 +36,10 @@ const cidades = ['Santos', 'Guaruja','São Vicente','Itariri'];
 const universidades = ['Unip', 'Unisanta','Unimes','Esamc'];
 
 function Home() {
-
-
     const [value, setValue] = React.useState(new Date());
+    const { control, handleSubmit } = useForm();
+
+    const onSubmit = data => console.log(data);
 
     return(
         <div className='geral'>
@@ -50,39 +48,90 @@ function Home() {
                 <div id='menu-inicial'>
 
                     <div id='pesquisa'>
-                        <Autocomplete
-                            disablePortal
-                            options={cidades}
-                            sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Qual Cidade?" />}
-                        />
 
-                        <Autocomplete
-                            disablePortal
-                            options={universidades}
-                            sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Qual Faculdade?" />}
-                        />
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <Controller
+                                name='cidadeSelecionada'
+                                control={control}
+                                render={({field: {onChange, value } }) => (
+                                    <Autocomplete
+                                        disablePortal
+                                        id='selecaoCidade'
+                                        options={cidades}
+                                        sx={{ width: 300 }}
+                                        renderInput={(params) => 
+                                            <TextField 
+                                                {...params} 
+                                                label="Qual Cidade?" 
+                                                inputProps={{
+                                                    ...params.inputProps,
+                                                    autoComplete: "disabled" // disable autocomplete and autofill
+                                                }}
+                                            />
+                                        }
+                                        onChange={(_,data) => {
+                                            onChange(data);
+                                            return data;
+                                        }}
+                                    />
+                                )}
+                            />
 
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <Stack spacing={3}>
-                                <DatePicker
-                                disableFuture
-                                label="Data da ida"
-                                openTo="year"
-                                views={['year', 'month', 'day']}
-                                value={value}
-                                onChange={(newValue) => {
-                                    setValue(newValue);
-                                }}
-                                renderInput={(params) => <TextField {...params} />}
+                            <Controller
+                                name='facuSelecionada'
+                                control={control}
+                                render={({field: {onChange, value } }) => (
+                                    <Autocomplete
+                                        disablePortal
+                                        options={universidades}
+                                        sx={{ width: 300 }}
+                                        renderInput={(params) => <TextField {...params} label="Qual Faculdade?" />}
+                                    
+                                        onChange={(_,data) => {
+                                            onChange(data);
+                                            return data;
+                                        }}
+                                    />
+                                )}
+                            />
+
+                            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                <Stack spacing={3}>
+                                <Controller
+                                    name='dataSelecionada'
+                                    control={control}
+                                    render={({field: {onChange, value} }) =>(
+                                        <DatePicker
+                                            label="Data da ida"
+                                            openTo="year"
+                                            views={['year', 'month', 'day']}
+                                            value={value}
+                                            
+                                            renderInput={(params) => <TextField {...params} />} 
+                                            onChange={(newValue) => {
+                                                setValue(newValue);
+                                                onChange(newValue);
+                                                return newValue;
+
+                                            } }
+                                            
+                                        />
+                                    )}
+                                    
                                 />
-                            </Stack>
-                        </LocalizationProvider>
-
-                        <IconButton aria-label="delete">
-                            <SearchSharpIcon />
-                        </IconButton>
+                                </Stack>
+                            </LocalizationProvider>
+                          
+                            <IconButton
+                                aria-label="delete"
+                                onClick={() => console.log('CLOKADA')}
+                                type='submit'
+                            >
+                                <SearchSharpIcon />
+                            </IconButton>
+                              
+                        </form>
+                        
                     </div>
 
                     <div id='cards'>
